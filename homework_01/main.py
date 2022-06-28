@@ -6,7 +6,7 @@
 
 def power_numbers(*numbers):
     return [num ** 2 for num in numbers]
-    """
+"""
     функция, которая принимает N целых чисел,
     и возвращает список квадратов этих чисел
     >>> power_numbers(1, 2, 5, 7)
@@ -30,10 +30,10 @@ def is_prime(number):
 
 def filter_numbers(numbers_list, filter_type):
     if filter_type == ODD or filter_type == EVEN:
-        print(list(filter(filter_type, numbers_list)))
+        return list(filter(filter_type, numbers_list))
     else:
-        print(list(filter(is_prime, numbers_list)))
-    """
+        return list(filter(is_prime, numbers_list))
+"""
     функция, которая на вход принимает список из целых чисел,
     и возвращает только чётные/нечётные/простые числа
     (выбор производится передачей дополнительного аргумента)
