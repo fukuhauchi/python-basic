@@ -1,4 +1,5 @@
-from abc import ABC
+from abc import ABC, abstractmethod
+from .exceptions import LowFuelError, NotEnoughFuel, CargoOverload
 
 
 class Vehicle(ABC):
@@ -8,5 +9,41 @@ class Vehicle(ABC):
         self.fuel = fuel
         self.fuel_consumption = fuel_consumption
 
+    @property
+    def weight(self):
+        return self.weight
+
+    @weight.setter
+    def weight(self, new_weight):
+        self.weight = new_weight
+
+    @property
+    def fuel(self):
+        return self.fuel
+
+    @fuel.setter
+    def fuel(self, new_fuel):
+        self.fuel = new_fuel
+
+    @property
+    def fuel_consumption(self):
+        return self.fuel_consumption
+
+    @fuel_consumption.setter
+    def fuel_consumption(self, new_fuel_consumption):
+        self.fuel_consumption = new_fuel_consumption
+
+    @abstractmethod
     def start(self):
-        if self.started == False:
+        if not self.started:
+            if self.fuel > 0:
+                self.started = True
+            else:
+                raise NotEnoughFuel("not enough fuel!")
+        else:
+            pass
+
+    @abstractmethod
+    def move(self):
+        pass
+
