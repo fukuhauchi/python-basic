@@ -6,6 +6,6 @@ from dataclasses import dataclass
 
 @dataclass
 class Engine:
-    volume: int or float
-    pistons: int
+    volume: object
+    pistons: object
     pass
