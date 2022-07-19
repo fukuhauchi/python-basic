@@ -8,5 +8,5 @@ from .engine import Engine
 class Car(Vehicle):
     engine = None
 
-    def set_engine(self, input_volume, input_pistons):
-        self.engine = Engine(volume=input_volume, pistons=input_pistons)
+    def set_engine(self, engine_specs):
+        self.engine = Engine(*engine_specs)
